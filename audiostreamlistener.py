@@ -3,19 +3,6 @@ import sys
 import pyaudio
 from picovoice import Picovoice
 
-RESPEAKER_RATE = 16000
-RESPEAKER_CHANNELS = 2 
-RESPEAKER_WIDTH = 2
-# run getDeviceInfo.py to get index
-RESPEAKER_INDEX = 1  # refer to input device id
-CHUNK = 1024
-ACCESS_KEY = "o0foZsUF9BFQMPWGfD3q/WoG+4EUhffHwOF0/l2BUThweEwwYBdQyQ=="
-KEYWORD_PATH = "/home/pi/voice-assistant-alina/wakewords/niemand_de_raspberry-pi_v2_0_0.ppn"
-CONTEXT_PATH = "/home/pi/voice-assistant-alina/models/Spruch_de_raspberry-pi_v2_0_0.rhn"
-PORCUPINE_DE_SUPPORT = "/home/pi/voice-assistant-alina/de-support/porcupine_params_de.pv"
-RHINO_DE_SUPPORT = "/home/pi//voice-assistant-alina/de-support/rhino_params_de.pv"
-
-
 class AudioStreamListener:
 
     def __init__(self, picovoice, channels):

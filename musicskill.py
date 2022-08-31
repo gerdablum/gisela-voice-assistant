@@ -1,6 +1,5 @@
 import vlc
 from enum import Enum
-import re
 
 MP3_STREAM_URL_HIP_HOP = "http://stream.jam.fm/rap"
 MP3_STREAM_ENTSPANNUNG = "https://streams.fluxfm.de/yogasounds/mp3-128/streams.fluxfm.de/"
@@ -21,12 +20,14 @@ class MusicType(Enum):
 
 class MusicSkill:
 
-    def __init__(self, player):
+    def __init__(self, player, mqttClient):
         
         self.player = player
         self.startCommands = ["spiele", "starte", "starten", "an"]
         self.stopCommands = ["stop", "aufhören", "stoppen", "aus"]
         self.setUrl(MP3_STREAM_URL_HIP_HOP)
+
+        mqttClient.subscribe(self)
 
         # we need this flag to distinguish if the music was just interrupted or turned off
         self.wasPlaying = False
