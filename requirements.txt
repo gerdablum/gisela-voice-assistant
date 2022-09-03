@@ -1,0 +1,5 @@
+python-vlc
+picovoice
+PyAudio
+picovoice
+paho-mqtt

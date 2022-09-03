@@ -7,12 +7,12 @@ from utils import filehelper
 import vlc
 
 
-ACCESS_KEY = "/home/pi/voice-assistant-alina/access_key.txt"
-KEYWORD_PATH = "/home/pi/voice-assistant-alina/wakewords/gisela_de_raspberry-pi_v2_1_0.ppn"
-CONTEXT_PATH = "/home/pi/voice-assistant-alina/models/sayPhrase_de_raspberry-pi_v2_1_0.rhn"
-PORCUPINE_DE_SUPPORT = "/home/pi/voice-assistant-alina/de-support/porcupine_params_de.pv"
-RHINO_DE_SUPPORT = "/home/pi/voice-assistant-alina/de-support/rhino_params_de.pv"
-AUDIO_MISHEARD_DIR = "/home/pi/voice-assistant-alina/audios/wakeword-callbacks/"
+ACCESS_KEY = "./access_key.txt"
+KEYWORD_PATH = "./wakewords/gisela_de_raspberry-pi_v2_1_0.ppn"
+CONTEXT_PATH = "./models/sayPhrase_de_raspberry-pi_v2_1_0.rhn"
+PORCUPINE_DE_SUPPORT = "./de-support/porcupine_params_de.pv"
+RHINO_DE_SUPPORT = "./de-support/rhino_params_de.pv"
+AUDIO_MISHEARD_DIR = "./audios/wakeword-callbacks/"
 
 class Controller:
 
@@ -31,7 +31,7 @@ class Controller:
 
     def __my_wake_word_callback(self):
         print("Wakeword detected")
-        audioPlayer = AudioPlayer("/home/pi/voice-assistant-alina/audios/button-37a.wav")
+        audioPlayer = AudioPlayer(".audios/button-37a.wav")
         self.skillManager.pauseCurrentSkill()
         audioPlayer.start()
         audioPlayer.join()
