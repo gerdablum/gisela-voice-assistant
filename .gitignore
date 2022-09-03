@@ -27,5 +27,5 @@ wheels/
 ## private files and train files
 
 access_key.txt
-models/
-audios/
+*.wav
+*.ppn

@@ -1,0 +1,54 @@
+context:
+  expressions:
+    sayPhrase:
+      - "[sag, erzähl, gib] mir (bitte) einen (weisen) [Spruch, Ratschlag]"
+    music:
+      - $startStop:var ($musicType:type) Musik (ab)
+      - ($musicType:type) Musik $startStop:var
+    turnOnLights:
+      - (Mach) (das) $lightType:light an
+    turnOffLights:
+      - (Mach) (das) $lightType:light aus
+    alarmClock:
+      - "[stell, stelle] (mir) (einen) Wecker (für, auf) ($weekday:day)
+        $pv.TwoDigitInteger:hours Uhr $pv.TwoDigitInteger:minutes"
+      - "[stell, stelle] (mir) (einen) Wecker (für, auf) ($weekday:day)
+        $pv.TwoDigitInteger:hoursTwo Uhr"
+  slots:
+    weekday:
+      - Montag
+      - Dienstag
+      - Mittwoch
+      - Donnerstag
+      - Freitag
+      - Samstag
+      - Sonntag
+      - heute
+      - morgen
+      - übermorgen
+    startStop:
+      - spiele
+      - starte
+      - stop
+      - aufhören
+      - starten
+      - stoppen
+      - aus
+      - an
+    lightType:
+      - Licht
+      - Fahrradlampe
+      - Rad Lampe
+      - Rad Licht
+      - Fernseher
+      - Alle lichter
+      - Alles
+    musicType:
+      - Rap
+      - HipHop
+      - Rock
+      - Pop
+      - Indie
+      - Entspannung
+      - Dance
+  macros: {}
